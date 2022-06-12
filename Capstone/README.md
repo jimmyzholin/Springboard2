@@ -16,29 +16,29 @@ From EDA, we see there is a good amount of survey participants from every age gr
 
 We also see that the overwhelming majority of survey particiants identified as White.
 
-![Bar graph of participant race](https://github.com/jimmyzholin/Springboard2/tree/master/Capstone/references/race_distribution.JPG)
+![Bar graph of participant race](https://github.com/jimmyzholin/Springboard2/blob/master/Capstone/reports/figures/race_distribution.JPG)
 
 In terms of most prominent reported health ailments, heart disease is actually fifth behind difficulty in mobility, diabetes, asthma, and skin cancer. Though since the most prominent age groups who participated are aged 55 years and above, it seems reasonable heart disease is not the highest. We also have to keep in mind that this dataset is not reporting on deaths where heart disease is ranked number one in the US.
 
-![Bar graph of participant race](https://github.com/jimmyzholin/Springboard2/tree/master/Capstone/references/disease_dist.JPG)
+![Bar graph of participant race](https://github.com/jimmyzholin/Springboard2/blob/master/Capstone/reports/figures/disease_dist.JPG)
 
 ### Modeling
 To create predictions, I chose three different machine learning models: Random Forest, Support Vector Machine, and Decision Tree. 
 I began with the Random Forest model for its computational speed. Also, I would not have to decide on individual feature importance as I do not necessarily known which features have the most influence on predicting heart disease. Lastly, I would not have to do extensive hyperparameter tuning with this model and so I could get results quickly to help me explore different models. For example, the results of the Random Forest helped me to decide on which features to use for the Support Vector Machine model.
 
-![Random Forest Feature Importance Bar Graph](https://github.com/jimmyzholin/Springboard2/tree/master/Capstone/reports/figures/randomForestFeatureImportance.JPG)
+![Random Forest Feature Importance Bar Graph](https://github.com/jimmyzholin/Springboard2/blob/master/Capstone/reports/figures/randomForestFeatureImportance.JPG)
 
 With 18 features in this dataset and a test set of over 210,000 records, the required time to fit a Support Vector Machine was too long. After waiting hours to fit the test set to the model, I decided to narrow my test set features. I chose the top 3 relative features decided by the Random Forest model: BMI, SleepTime, and AgeCategory. With the narrowed feature test set fitting the model still took 24 minutes. Though we'll see when we compare the ROC curves, the Support Vector Machine performs the worst out of the three chosen models.
 
-![ROC Curve: Support Vector Machine](https://github.com/jimmyzholin/Springboard2/tree/master/Capstone/reports/figures/ROC_SVM.JPG)
+![ROC Curve: Support Vector Machine](https://github.com/jimmyzholin/Springboard2/blob/master/Capstone/reports/figures/ROC_SVM.JPG)
 
 The best predictive model was the Decision Tree with a hyperparameter max depth of 5. I used Randomized Grid Cross Validation to determine the optimal max depth but I also compared the accuracy and F1 scores of several max depths.
 
-![Decision Tree: Max Depth Comparison](https://github.com/jimmyzholin/Springboard2/tree/master/Capstone/reports/figures/decisionTree_max_depth_comp.JPG)
+![Decision Tree: Max Depth Comparison](https://github.com/jimmyzholin/Springboard2/blob/master/Capstone/reports/figures/decisionTree_max_depth_comp.JPG)
 
 When comparing the ROC curves of all three models the Decision Tree shows the best performance and can serve as the prediction model. 
 
-![ROC Curves of all models](https://github.com/jimmyzholin/Springboard2/tree/master/Capstone/reports/figures/ROC_Comparison.JPG)
+![ROC Curves of all models](https://github.com/jimmyzholin/Springboard2/blob/master/Capstone/reports/figures/ROC_Comparison.JPG)
 
 Since the negative effects of heart disease happen over long periods of time and there is little downside to minimizing its negative effects, we can choose and tune a model that can allow more False Positive Rate so long as the True Positive Rate also improves.
 
