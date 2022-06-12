@@ -12,7 +12,7 @@ This dataset was made available on Kaggle by user Kamil Pytlak. Kamil performed 
 
 From EDA, we see there is a good amount of survey participants from every age group though we see the age groups above 55 nearly double some younger age groups.
 
-![Bar graph of age groups](https://github.com/jimmyzholin/Springboard2/tree/master/Capstone/references/bar_graph.JPG)
+![Bar graph of age groups](https://github.com/jimmyzholin/Springboard2/blob/master/Capstone/reports/figures/age_bar_graph.JPG)
 
 We also see that the overwhelming majority of survey particiants identified as White.
 
